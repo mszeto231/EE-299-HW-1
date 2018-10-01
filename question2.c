@@ -10,21 +10,23 @@
 //		c.Correct any poor coding or style practices.
 
 #include <stdio.h>
+
 int main(void)
 {
-	int travelers;
-	float totalCost = 0.0f;
+	int travelers = 0;			// number of people going on the trip
+	float totalCost = 0.0f;		// total cost of the trip
 
-	float cost = 977.50;	// cost of trip per person
-	float discount = 0.05;	// discount in the form of a percentage converted to a decimal
-	float tax = 0.095;		// sales tax in the form of a percentage converted to a decimal
+	float cost = 977.50;		// cost of trip per person
+	float discount = 0.05;		// discount in the form of a percentage converted to a decimal
+	float tax = 0.095;			// sales tax in the form of a percentage converted to a decimal
 
 	float netCost = cost * (1 - discount) * (1 + tax);		// net cost of trip per person
 
-	printf("how many people will be traveling: ");
-	scanf("%d", &travelers);
+	printf("How many people will be traveling?: ");			// prompt to ask how many travelers there are
+	scanf("%d", &travelers);								// retrieves input from user and sets travelers
 
-	// YOUR CODE HERE TOO
+	printf("The trip will cost $%.2f per person.\n", netCost);				// prints the cost per person to console
+	printf("The total cost of the trip is $%.2f.\n", netCost * travelers);	// prints the total cost to console
 
 	return 0;
 }
