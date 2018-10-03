@@ -3,7 +3,8 @@
 // By Mitchell Szeto
 
 /*
-* Working with Variables
+* Working with Variables and practice with the debugger
+* 
 * Breakpoint 0: anAnswer = 0;   anInt0 = 9; anInt1 = 8
 * Breakpoint 1: anAnswer = 17;  anInt0 = 9; anInt1 = 8
 * Breakpoint 2: anAnswer = 72;  anInt2 = 3

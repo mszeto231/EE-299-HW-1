@@ -23,10 +23,21 @@ int main(void)
 	float netCost = cost * (1 - discount) * (1 + tax);		// net cost of trip per person
 
 	printf("How many people will be traveling?: ");			// prompt to ask how many travelers there are
-	scanf("%d", &travelers);								// retrieves input from user and sets travelers
+	int status = scanf("%d", &travelers);					// retrieves input from user and sets travelers
 
-	printf("The trip will cost $%.2f per person.\n", netCost);				// prints the cost per person to console
-	printf("The total cost of the trip is $%.2f.\n", netCost * travelers);	// prints the total cost to console
+	// Makes sure that the user input is a number greater than 0
+	// If the user enters a number with a decimal, the number is rounded down
+	while (status == 0 || travelers <= 0) {
+
+		// making sure to get rid of any hidden chars from scanf input
+		while (getchar() != '\n'); 
+		printf("Please enter a positive number: ");
+		status = scanf("%d", &travelers);
+	}
+
+	// prints cost to console
+	printf("The trip will cost $%.2f per person.\n", netCost);
+	printf("The total cost of the trip for %d people is $%.2f.\n", travelers, netCost * travelers);
 
 	return 0;
 }
